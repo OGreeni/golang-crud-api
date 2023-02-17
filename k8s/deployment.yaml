@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      name: test-pod
+      labels:
+        app: test-app
+    spec:
+      containers:
+        - name: crud-api
+          image: ogreeni/test-repo
+          ports:
+            - containerPort: 3000
+# kubectl port-forward pod/my-pod 3000:3000
