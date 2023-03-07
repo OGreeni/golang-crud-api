@@ -18,4 +18,3 @@ spec:
           image: ogreeni/test-repo
           ports:
             - containerPort: 3000
-# kubectl port-forward pod/my-pod 3000:3000
